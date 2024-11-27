@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let card of cards; let i = index">
+    <h3>{{ card.cardName }}</h3>
+    <p>Code : {{ card.cardCode }}</p>
+    <p>CCV : {{ card.ccv }}</p>
+    <p>Expiration : {{ card.expiry }}</p>
+    <button (click)="onEdit(i, card)">Modifier</button>
+    <button (click)="onDelete(i)">Supprimer</button>
+  </li>
+</ul>
