@@ -6,24 +6,24 @@
 ></app-card-list>
 
 <div *ngIf="editingIndex !== null">
-    <h3>Modifier la carte</h3>
-    <form (ngSubmit)="onSaveEdit()">
-      <label>
-        Nom de la carte :
-        <input [(ngModel)]="editingCard.cardName" name="editCardName" />
-      </label>
-      <label>
-        Code de la carte :
-        <input [(ngModel)]="editingCard.cardCode" name="editCardCode" maxlength="16" />
-      </label>
-      <label>
-        CCV :
-        <input [(ngModel)]="editingCard.ccv" name="editCCV" maxlength="3" />
-      </label>
-      <label>
-        Expiration (MM/AA) :
-        <input [(ngModel)]="editingCard.expiry" name="editExpiry" />
-      </label>
-      <button type="submit">Sauvegarder</button>
-    </form>
-  </div>
+  <h3>Modifier la carte</h3>
+  <form (ngSubmit)="onSaveEdit()">
+    <label>
+      Nom de la carte :
+      <input [(ngModel)]="editingCard.cardName" name="editCardName" />
+    </label>
+    <label>
+      Code de la carte :
+      <input [(ngModel)]="editingCard.cardCode" name="editCardCode" maxlength="16" />
+    </label>
+    <label>
+      CCV :
+      <input [(ngModel)]="editingCard.ccv" name="editCCV" maxlength="3" />
+    </label>
+    <label>
+      Expiration (MM/AA) :
+      <input [(ngModel)]="editingCard.expiry" name="editExpiry" />
+    </label>
+    <button type="submit">Sauvegarder</button>
+  </form>
+</div>
