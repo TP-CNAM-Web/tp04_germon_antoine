@@ -13,6 +13,8 @@ export class CardFormComponent {
 
   cardForm: FormGroup;
 
+  expiry: string = "";
+
   constructor(private fb: FormBuilder) {
     this.cardForm = this.fb.group({
       cardName: ['', [Validators.required, Validators.minLength(3)]],
@@ -28,5 +30,17 @@ export class CardFormComponent {
       this.cardAdded.emit(this.cardForm.value); // Émettre les données du formulaire
       this.cardForm.reset(); // Réinitialiser le formulaire après soumission
     }
+  }
+
+  onExpiryInput(event: Event) {
+    const input = event.target as HTMLInputElement;
+    let value = input.value.replace(/\D/g, ''); // Remove non-digit characters
+
+    if (value.length > 2) {
+      value = value.slice(0, 2) + '/' + value.slice(2, 4);
+    }
+
+    input.value = value;
+    this.cardForm.get('expiry')?.setValue(value, { emitEvent: false });
   }
 }

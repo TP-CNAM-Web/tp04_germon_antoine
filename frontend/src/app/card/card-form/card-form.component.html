@@ -16,7 +16,7 @@
   
   <div class="form-group">
     <label>Expiration (MM/AA) :</label>
-    <input formControlName="expiry" placeholder="MM/AA" />
+    <input formControlName="expiry" [(ngModel)]="expiry" placeholder="MM/AA" (input)="onExpiryInput($event)" />
   </div>
   
   <button type="submit" [disabled]="cardForm.invalid">Ajouter</button>
